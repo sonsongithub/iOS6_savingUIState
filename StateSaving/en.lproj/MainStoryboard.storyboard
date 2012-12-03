@@ -320,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElH-xL-z8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="123"/>
+            <point key="canvasLocation" x="1037" y="-691"/>
         </scene>
         <!--Scroll View Controller - UIScrollView-->
         <scene sceneID="DoN-i1-hKP">
@@ -347,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERt-4S-1Sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="-1990"/>
+            <point key="canvasLocation" x="1037" y="-2804"/>
         </scene>
         <!--Text View Controller - UITextView-->
         <scene sceneID="dBN-0S-3iK">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCS-3u-ONA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="-1280"/>
+            <point key="canvasLocation" x="1037" y="-2094"/>
         </scene>
         <!--First View Controller - FirstViewController-->
         <scene sceneID="NoT-4c-mh6">
@@ -411,7 +411,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmG-7J-4Cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="-538"/>
+            <point key="canvasLocation" x="1037" y="123"/>
         </scene>
         <!--Map View Controller - MKMapView-->
         <scene sceneID="Laa-3A-3hl">
@@ -438,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJ6-sd-2Dd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="-580"/>
+            <point key="canvasLocation" x="1037" y="-1394"/>
         </scene>
         <!--Navigation Controller - Controls-->
         <scene sceneID="4T5-fg-SMI">
@@ -529,13 +529,28 @@
                                     <segue destination="7Jx-ZD-bue" kind="unwind" unwindAction="dismissModal:" id="gUJ-um-gZE"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-2l-PtQ"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Crash switch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFZ-dq-rhh">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SEQ-vo-ZTO" firstAttribute="top" secondItem="zuU-n8-y2b" secondAttribute="top" constant="252" id="Uvy-LM-bOe"/>
-                            <constraint firstItem="SEQ-vo-ZTO" firstAttribute="centerX" secondItem="zuU-n8-y2b" secondAttribute="centerX" type="default" id="yOh-ey-XdJ"/>
+                            <constraint firstItem="SEQ-vo-ZTO" firstAttribute="centerX" secondItem="zuU-n8-y2b" secondAttribute="centerX" type="default" id="ehz-5t-JOV"/>
+                            <constraint firstAttribute="bottom" secondItem="s9x-2l-PtQ" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="eiE-FS-C00"/>
+                            <constraint firstItem="bFZ-dq-rhh" firstAttribute="leading" secondItem="zuU-n8-y2b" secondAttribute="leading" constant="63" id="gj2-OX-Oco"/>
+                            <constraint firstAttribute="bottom" secondItem="s9x-2l-PtQ" secondAttribute="bottom" constant="20" type="user" id="kXA-Ls-DQm"/>
+                            <constraint firstItem="bFZ-dq-rhh" firstAttribute="centerY" secondItem="s9x-2l-PtQ" secondAttribute="centerY" type="user" id="oD7-7x-bbX"/>
+                            <constraint firstAttribute="bottom" secondItem="bFZ-dq-rhh" secondAttribute="bottom" constant="23" type="user" id="qPp-JQ-Mpk"/>
+                            <constraint firstAttribute="trailing" secondItem="s9x-2l-PtQ" secondAttribute="trailing" constant="62" id="vJY-Yy-b8k"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="crashFlagSwitch" destination="s9x-2l-PtQ" id="Ffj-SY-Ux4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZf-tl-MMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7Jx-ZD-bue" userLabel="Exit" sceneMemberID="exit"/>
@@ -567,9 +582,16 @@
         </class>
         <class className="PresentedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PresentedViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="crashFlagSwitch" candidateClass="UISwitch"/>
+            </relationships>
         </class>
         <class className="PresentingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PresentingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismissModal:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="open:"/>
+            </relationships>
         </class>
         <class className="RestorationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RestorationViewController.h"/>
@@ -592,6 +614,9 @@
             <relationships>
                 <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
             </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>

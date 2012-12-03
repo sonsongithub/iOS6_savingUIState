@@ -16,12 +16,22 @@
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod
+	[coder encodeBool:self.crashFlagSwitch.on forKey:@"switch"];
 	[super encodeRestorableStateWithCoder:coder];
 }
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod
+	if ([coder decodeBoolForKey:@"switch"]) {
+		// crash code
+		NSMutableArray *array = [NSMutableArray array];
+		[array addObject:nil];
+	}
 	[super decodeRestorableStateWithCoder:coder];
+}
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
 }
 
 @end

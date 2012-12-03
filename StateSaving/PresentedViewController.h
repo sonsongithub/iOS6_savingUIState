@@ -10,4 +10,6 @@
 
 @interface PresentedViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UISwitch *crashFlagSwitch;
+
 @end
