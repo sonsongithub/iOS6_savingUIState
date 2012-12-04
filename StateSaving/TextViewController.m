@@ -16,12 +16,24 @@
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod
+	
+	[coder encodeObject:self.textView.text forKey:@"text"];
+	
 	[super encodeRestorableStateWithCoder:coder];
 }
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod
+	
+	
+	self.textView.text = [coder decodeObjectForKey:@"text"];
+	
 	[super decodeRestorableStateWithCoder:coder];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	DNSLogMethod
+	[super viewDidAppear:animated];
 }
 
 @end

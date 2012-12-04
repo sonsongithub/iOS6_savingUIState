@@ -22,6 +22,25 @@
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod
 	[super decodeRestorableStateWithCoder:coder];
+	
+	DNSLog(@"%@", self.webView.request);
+	if (self.webView.canGoBack) {
+		NSLog(@"can go back");
+	}
+}
+
+
+- (void)viewDidLoad {
+	DNSLogMethod
+	[super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	DNSLog(@"%@", self.webView.request);
+	if (self.webView.canGoBack) {
+		NSLog(@"can go back");
+	}
 }
 
 @end
