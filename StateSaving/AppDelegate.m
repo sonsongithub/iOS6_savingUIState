@@ -32,6 +32,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	DNSLogMethod
     return YES;
 }
 

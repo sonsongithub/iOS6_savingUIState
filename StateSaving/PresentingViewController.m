@@ -33,4 +33,20 @@
 	[super decodeRestorableStateWithCoder:coder];
 }
 
+- (void)awakeFromNib {
+	DNSLogMethod
+	[super awakeFromNib];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	DNSLogMethod
+	self = [super initWithCoder:aDecoder];
+	return self;
+}
+
+- (void)viewDidLoad {
+	DNSLogMethod
+	[super viewDidLoad];
+}
+
 @end
