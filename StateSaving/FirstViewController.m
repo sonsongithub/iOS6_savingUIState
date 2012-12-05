@@ -40,12 +40,17 @@
 	}
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
 #pragma mark - Table view data source for restore and saving
 
 - (NSString*)modelIdentifierForElementAtIndexPath:(NSIndexPath *)idx inView:(UIView *)view {
 	DNSLogMethod
 	if (self.tableView == view) {
-		return @"Default";
+		return [NSString stringWithFormat:@"%d", idx.row];
 	}
 	return nil;
 }
@@ -53,12 +58,17 @@
 - (NSIndexPath*)indexPathForElementWithModelIdentifier:(NSString *)identifier inView:(UIView *)view {
 	DNSLogMethod
 	if (self.tableView == view) {
-		
+		int row = [identifier intValue];
+		return [NSIndexPath indexPathForRow:row inSection:0];
 	}
 	return nil;
 }
 
 #pragma mark - Table view data source
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 3;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -81,7 +91,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+//	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
