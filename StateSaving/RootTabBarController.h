@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootTabBarController : UITabBarController //<UIViewControllerRestoration>
+@interface RootTabBarController : UITabBarController
 
 @end

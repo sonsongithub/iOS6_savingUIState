@@ -17,7 +17,8 @@
 
 @implementation RestorationViewController
 
-+ (UIViewController*)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
++ (UIViewController*)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
+														   coder:(NSCoder *)coder {
 	if ([[identifierComponents lastObject] isEqualToString:@"FromXibViewController"])
 		return [[FromXibViewController alloc] initWithNibName:@"FromXibViewController" bundle:nil];
 	return nil;

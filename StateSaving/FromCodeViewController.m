@@ -35,8 +35,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.restorationClass = [self class];
-	self.restorationIdentifier = @"FromCodeViewController";
+	if ([self respondsToSelector:@selector(restorationClass)]) {
+		self.restorationClass = [self class];
+		self.restorationIdentifier = @"FromCodeViewController";
+	}
 	
 	// setup view controller
 	UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];

@@ -16,14 +16,41 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+- (void)initializeApplication {
+	DNSLogMethod
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		// code to intialize
+		NSLog(@"initalize...");
+	});
+}
+
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	DNSLogMethod
+	[self initializeApplication];
 	return YES;
 }
 
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
 	DNSLogMethod
-	return YES;
+	NSString *savedVersionString = [coder decodeObjectForKey:@"ApplicationVersion"];
+	NSString *appliationVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+	return [savedVersionString isEqualToString:appliationVersion];
+}
+
+- (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
+	DNSLogMethod
+	return nil;
+}
+
+- (void)application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder {
+	DNSLogMethod
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	DNSLogMethod
+	[self initializeApplication];
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
@@ -31,14 +58,17 @@
 	return YES;
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (void)application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod
-    return YES;
+	NSString *appliationVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+	[coder encodeObject:appliationVersion forKey:@"ApplicationVersion"];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	[self saveContext];
 }
+
+#pragma mark - for Core Data surppot
 
 - (void)saveContext {
     NSError *error = nil;

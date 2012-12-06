@@ -35,6 +35,7 @@
 		146C9C8B166BF2EC00D22019 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146C9C8A166BF2EC00D22019 /* ScrollViewController.m */; };
 		146C9C8E166BF2FA00D22019 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146C9C8D166BF2FA00D22019 /* TextViewController.m */; };
 		146C9C91166BF30600D22019 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146C9C90166BF30600D22019 /* WebViewController.m */; };
+		1486CBF3166EE3B3009FB59B /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1486CBF2166EE3B3009FB59B /* MyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,8 @@
 		146C9C8D166BF2FA00D22019 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		146C9C8F166BF30600D22019 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		146C9C90166BF30600D22019 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		1486CBF1166EE3B3009FB59B /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		1486CBF2166EE3B3009FB59B /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 				146C9C8D166BF2FA00D22019 /* TextViewController.m */,
 				146C9C8F166BF30600D22019 /* WebViewController.h */,
 				146C9C90166BF30600D22019 /* WebViewController.m */,
+				1486CBF1166EE3B3009FB59B /* MyView.h */,
+				1486CBF2166EE3B3009FB59B /* MyView.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				146C9C8B166BF2EC00D22019 /* ScrollViewController.m in Sources */,
 				146C9C8E166BF2FA00D22019 /* TextViewController.m in Sources */,
 				146C9C91166BF30600D22019 /* WebViewController.m in Sources */,
+				1486CBF3166EE3B3009FB59B /* MyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +425,7 @@
 				146C9C58166BDB9E00D22019 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

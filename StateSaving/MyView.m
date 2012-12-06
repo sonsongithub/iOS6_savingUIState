@@ -1,24 +1,14 @@
 //
-//  RootTabBarController.m
+//  MyView.m
 //  StateSaving
 //
-//  Created by sonson on 2012/12/02.
+//  Created by sonson on 2012/12/05.
 //  Copyright (c) 2012年 sonson. All rights reserved.
 //
 
-#import "RootTabBarController.h"
+#import "MyView.h"
 
-@interface RootTabBarController ()
-
-@end
-
-@implementation RootTabBarController
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-	DNSLogMethod
-	self = [super initWithCoder:aDecoder];
-	return self;
-}
+@implementation MyView
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod

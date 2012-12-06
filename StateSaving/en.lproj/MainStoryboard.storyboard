@@ -283,6 +283,27 @@
                                             <segue destination="tu4-Ie-Hb4" kind="push" id="dFV-o4-gBU"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="h9U-nF-pjW" style="IBUITableViewCellStyleDefault" id="Gdq-OD-QWj">
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Custom view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h9U-nF-pjW">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="9Fq-0z-PaW" kind="push" id="Ti9-51-e4V"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -321,6 +342,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElH-xL-z8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037" y="-691"/>
+        </scene>
+        <!--View Controller - Custom view-->
+        <scene sceneID="WPx-b3-kQt">
+            <objects>
+                <viewController storyboardIdentifier="CustomViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Fq-0z-PaW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tak-BG-SEd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="MyView" translatesAutoresizingMaskIntoConstraints="NO" id="o6l-23-DDe" customClass="MyView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o6l-23-DDe" firstAttribute="trailing" secondItem="Tak-BG-SEd" secondAttribute="trailing" type="default" id="Apr-la-Cp1"/>
+                            <constraint firstItem="o6l-23-DDe" firstAttribute="top" secondItem="Tak-BG-SEd" secondAttribute="top" type="default" id="bqe-Mj-0GI"/>
+                            <constraint firstItem="o6l-23-DDe" firstAttribute="bottom" secondItem="Tak-BG-SEd" secondAttribute="bottom" type="default" id="gb6-al-qPf"/>
+                            <constraint firstItem="o6l-23-DDe" firstAttribute="leading" secondItem="Tak-BG-SEd" secondAttribute="leading" type="default" id="pcb-Eq-sZH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Custom view" id="uPR-G7-Mrr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Lz-vj-mkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="-3526"/>
         </scene>
         <!--Scroll View Controller - UIScrollView-->
         <scene sceneID="DoN-i1-hKP">
@@ -576,6 +623,9 @@
         </class>
         <class className="MasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="MyView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyView.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
