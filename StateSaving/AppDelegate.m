@@ -65,7 +65,12 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+	DNSLogMethod
 	[self saveContext];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+	DNSLogMethod
 }
 
 #pragma mark - for Core Data surppot

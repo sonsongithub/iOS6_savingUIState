@@ -56,8 +56,14 @@
 	return ((AppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
 }
 
-- (void)awakeFromNib
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	DNSLogMethod
+	self = [super initWithCoder:aDecoder];
+	return self;
+}
+
+- (void)awakeFromNib {
+	DNSLogMethod
     [super awakeFromNib];
 }
 

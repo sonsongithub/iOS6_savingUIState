@@ -26,6 +26,12 @@
 	[super decodeRestorableStateWithCoder:coder];
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	DNSLogMethod
+	self = [super initWithCoder:aDecoder];
+	return self;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

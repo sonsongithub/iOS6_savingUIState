@@ -14,6 +14,11 @@
 
 @implementation FromCodeViewController
 
+- (id)init {
+	self = [super init];
+	return self;
+}
+
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod
 	[super encodeRestorableStateWithCoder:coder];

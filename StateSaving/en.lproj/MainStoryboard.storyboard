@@ -169,6 +169,30 @@
             </objects>
             <point key="canvasLocation" x="500" y="845"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zDG-tH-WvJ">
+            <objects>
+                <viewController id="Ch5-6h-Kob" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NGd-KT-ydx">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUD-Lu-OQf"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iUD-Lu-OQf" firstAttribute="bottom" secondItem="NGd-KT-ydx" secondAttribute="bottom" type="default" id="F8m-ys-GRb"/>
+                            <constraint firstItem="iUD-Lu-OQf" firstAttribute="top" secondItem="NGd-KT-ydx" secondAttribute="top" type="default" id="VbY-r0-Gv4"/>
+                            <constraint firstItem="iUD-Lu-OQf" firstAttribute="trailing" secondItem="NGd-KT-ydx" secondAttribute="trailing" type="default" id="Vxf-on-FKX"/>
+                            <constraint firstItem="iUD-Lu-OQf" firstAttribute="leading" secondItem="NGd-KT-ydx" secondAttribute="leading" type="default" id="l45-CV-aY4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YNU-1O-q74"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qY4-KG-kZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443" y="-585"/>
+        </scene>
         <!--Table View Controller - Controls-->
         <scene sceneID="q3d-rv-7lb">
             <objects>
@@ -302,6 +326,27 @@
                                         </view>
                                         <connections>
                                             <segue destination="9Fq-0z-PaW" kind="push" id="Ti9-51-e4V"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="oYP-um-IWK" style="IBUITableViewCellStyleDefault" id="esX-hZ-n8Y">
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Image view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oYP-um-IWK">
+                                                    <rect key="frame" x="10" y="0.0" width="267" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="Ch5-6h-Kob" kind="push" trigger="accessoryAction" id="i7r-BA-WRC"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -638,17 +683,9 @@
         </class>
         <class className="PresentingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PresentingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismissModal:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="open:"/>
-            </relationships>
         </class>
         <class className="RestorationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RestorationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="createModalFromCode:"/>
-                <relationship kind="action" name="createModalFromXib:"/>
-            </relationships>
         </class>
         <class className="RootTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootTabBarController.h"/>
@@ -664,9 +701,6 @@
             <relationships>
                 <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
             </relationships>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>

@@ -45,6 +45,12 @@
 	self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	DNSLogMethod
+	self = [super initWithCoder:aDecoder];
+	return self;
+}
+
 #pragma mark - Table view data source for restore and saving
 
 - (NSString*)modelIdentifierForElementAtIndexPath:(NSIndexPath *)idx inView:(UIView *)view {

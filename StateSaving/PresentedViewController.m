@@ -14,6 +14,12 @@
 
 @implementation PresentedViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	DNSLogMethod
+	self = [super initWithCoder:aDecoder];
+	return self;
+}
+
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
 	DNSLogMethod
 	[coder encodeBool:self.crashFlagSwitch.on forKey:@"switch"];

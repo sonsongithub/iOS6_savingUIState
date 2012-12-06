@@ -44,4 +44,10 @@
 	[self presentViewController:con animated:YES completion:nil];
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	DNSLogMethod
+	self = [super initWithCoder:aDecoder];
+	return self;
+}
+
 @end

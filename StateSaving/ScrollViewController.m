@@ -41,4 +41,10 @@
 	[self.scrollView setContentSize:CGSizeMake(r.size.width * 2, r.size.height)];
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	DNSLogMethod
+	self = [super initWithCoder:aDecoder];
+	return self;
+}
+
 @end

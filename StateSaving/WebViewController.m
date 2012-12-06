@@ -29,6 +29,11 @@
 	}
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	DNSLogMethod
+	self = [super initWithCoder:aDecoder];
+	return self;
+}
 
 - (void)viewDidLoad {
 	DNSLogMethod
