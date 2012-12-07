@@ -40,6 +40,7 @@
 
 - (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
 	DNSLogMethod
+	DNSLog(@"%@", identifierComponents);
 	return nil;
 }
 

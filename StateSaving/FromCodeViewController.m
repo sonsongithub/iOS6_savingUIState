@@ -15,8 +15,24 @@
 @implementation FromCodeViewController
 
 - (id)init {
+	DNSLogMethod
 	self = [super init];
 	return self;
+}
+
+- (void)setRestorationClass:(Class<UIViewControllerRestoration>)restorationClass {
+	DNSLogMethod
+	[super setRestorationClass:restorationClass];
+}
+
+- (NSString*)restorationIdentifier {
+	DNSLogMethod
+	return [super restorationIdentifier];
+}
+
+- (Class<UIViewControllerRestoration>)restorationClass {
+	DNSLogMethod
+	return [super restorationClass];
 }
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
@@ -30,6 +46,7 @@
 }
 
 + (UIViewController*)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
+	DNSLogMethod
 	FromCodeViewController *con = [[FromCodeViewController alloc] init];
 	return con;
 }
@@ -39,6 +56,7 @@
 }
 
 - (void)viewDidLoad {
+	DNSLogMethod
     [super viewDidLoad];
 	if ([self respondsToSelector:@selector(restorationClass)]) {
 		self.restorationClass = [self class];
